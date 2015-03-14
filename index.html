@@ -24,8 +24,9 @@
   			var stats = document.getElementById("crp-stats");
   			stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
 		}
+
 		window.addEventListener("load", function(event) {
-  			logCRP);
+  			logCRP();
 		});
 	</script>
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
