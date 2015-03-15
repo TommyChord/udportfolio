@@ -451,9 +451,10 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
   	// Get the element sizes first and do the calculations outside the for loop
-	var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[0], size);
-	var newwidth = (document.querySelectorAll(".randomPizzaContainer")[0].offsetWidth + dx) + 'px';
-	var pizzas = document.getElementsByClassName("randomPizzaContainer");
+  	var pizzas = document.getElementsByClassName("randomPizzaContainer");
+	var dx = determineDx(pizzas[0], size);
+	var newwidth = (pizzas[0].offsetWidth + dx) + 'px';
+	
 	// THEN iterate through the elements to change attributes.
 	for (var i = 0; i<pizzas.length; i++){
 		pizzas[i].style.width = newwidth;
@@ -504,7 +505,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
+  // Pulled selectors out of the for loop to save time
   var items = document.querySelectorAll('.mover');
   var scrollTopRes = document.body.scrollTop / 1250; 
   for (var i = 0; i < items.length; i++) {
@@ -533,6 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
+    //changed image size to 100x77 to fit resized optimized img
     elem.style.height = "100px";
     elem.style.width = "77px";
     elem.basicLeft = (i % cols) * s;
