@@ -32,16 +32,16 @@ Optimizations are done on the following:
   ```
 4. Updated changePizzaSizes(size):
   ```bash
-  	Get all the pizza elements:
+  	//Get all the pizza elements:
  	var pizzas = document.getElementsByClassName("randomPizzaContainer");
  	
- 	Determine the size:
+ 	//Determine the size:
 	var dx = determineDx(pizzas[0], size);
 	
-	Calculate the new width:
+	//Calculate the new width:
 	var newwidth = (pizzas[0].offsetWidth + dx) + 'px';
 	
-	THEN we can loop through all the pizza elements and set the new size:
+	//THEN we can loop through all the pizza elements and set the new size:
 	for (var i = 0; i<pizzas.length; i++){
 		pizzas[i].style.width = newwidth;
 	}
@@ -49,7 +49,7 @@ Optimizations are done on the following:
 4. Minimized the main.js (main_min.js)
 
 #### views/images
-5. Created a new smaller (100x77px) and optimized image of the floating pizzas (pizza_bg.png))
+5. Created a new smaller (100x77px) and optimized image of the floating pizzas (pizza_bg.png)
 5. Resized and optimized the main image (pizzeria.jpg)
 
 ###### Result from PS Insight:
